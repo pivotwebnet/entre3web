@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0A221C;
+    background-image: linear-gradient(180deg, #0C2820 0%, #0A221C 45%, #06150F 100%);
+    @apply min-h-screen font-sans text-sand-50 antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-semibold;
+  }
+}
