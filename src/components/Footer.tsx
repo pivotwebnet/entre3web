@@ -4,8 +4,8 @@ import { INSTAGRAM_URL } from '@/lib/contact';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-sand-200/10 py-12">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+    <footer className="border-t border-sand-200/10 py-8">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 md:flex-row md:items-center md:justify-between lg:px-8">
         <div className="flex items-center gap-4">
           <Logo className="h-10 w-10" />
           <p className="text-sm text-sand-100/75">Ecommerce, contenido, estrategia digital y fotografía para comercios.</p>
@@ -14,6 +14,9 @@ export default function Footer() {
         <nav className="flex items-center gap-8" aria-label="Pie de página">
           <a href="#servicios" className="text-sm font-medium text-sand-100/85 transition-colors hover:text-white">
             Servicios
+          </a>
+          <a href="#enfoque" className="text-sm font-medium text-sand-100/85 transition-colors hover:text-white">
+            Enfoque
           </a>
           <a href="#proceso" className="text-sm font-medium text-sand-100/85 transition-colors hover:text-white">
             Proceso

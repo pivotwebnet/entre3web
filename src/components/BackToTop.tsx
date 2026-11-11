@@ -16,7 +16,7 @@ export default function BackToTop() {
       type="button"
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       aria-label="Volver arriba"
-      className={`fixed bottom-6 left-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-sand-200/30 bg-brand-900/90 text-sand-100 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:bg-brand-800 ${
+      className={`fixed bottom-24 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-sand-200/30 bg-brand-900/90 text-sand-100 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:bg-brand-800 ${
         visible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-4 opacity-0'
       }`}
     >

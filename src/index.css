@@ -8,14 +8,56 @@
   }
 
   body {
-    background-color: #0A221C;
-    background-image: linear-gradient(180deg, #0C2820 0%, #0A221C 45%, #06150F 100%);
+    background-color: #061A1E;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(39, 129, 145, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 50% at 80% 100%, rgba(27, 102, 116, 0.08) 0%, transparent 50%),
+      linear-gradient(180deg, #0A2D33 0%, #061A1E 45%, #030F11 100%);
     @apply min-h-screen font-sans text-sand-50 antialiased;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.015 0.12' numOctaves='3' seed='5'/%3E%3CfeColorMatrix values='0 0 0 0 0.91 0 0 0 0 0.85 0 0 0 0 0.75 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
   }
 
   h1,
   h2,
   h3 {
-    @apply font-display font-semibold;
+    @apply font-display font-semibold tracking-tight;
+  }
+
+  :focus-visible {
+    outline: 2px solid #E9D8C0;
+    outline-offset: 4px;
+  }
+
+  .entre-carousel .slick-dots li button {
+    background-color: #E9D8C0 !important;
+    opacity: 0.35 !important;
+  }
+
+  .entre-carousel .slick-dots li.slick-active button {
+    background-color: #E9D8C0 !important;
+    opacity: 1 !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }

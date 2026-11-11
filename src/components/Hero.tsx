@@ -1,33 +1,41 @@
+import { ArrowUpRight } from 'lucide-react';
 import { AnimatedText, Reveal } from '@/components/AnimatedText';
 import PhotoCarousel from '@/components/PhotoCarousel';
+import { useSpotlight } from '@/hooks/useSpotlight';
 
 export default function Hero() {
+  const spotlightRef = useSpotlight<HTMLElement>();
+
   return (
-    <section id="inicio" className="relative overflow-hidden pb-24 pt-32 lg:pb-32 lg:pt-44">
+    <section
+      ref={spotlightRef}
+      id="inicio"
+      className="relative overflow-hidden pb-16 pt-28 lg:pb-20 lg:pt-36 [--spotlight-x:50%] [--spotlight-y:50%]"
+    >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:linear-gradient(to_right,#E8D7BE_1px,transparent_1px),linear-gradient(to_bottom,#E8D7BE_1px,transparent_1px)] [background-size:64px_64px]"
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 [background:radial-gradient(400px_at_var(--spotlight-x)_var(--spotlight-y),rgba(133,202,214,0.08),transparent)] hover:opacity-100"
       />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-16 px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div>
-          <Reveal>
-            <span className="inline-flex items-center gap-2 border border-sand-200/20 bg-brand-950/40 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-sand-200">
-              <span className="h-1.5 w-1.5 animate-pulse bg-brand-300" />
-              Ecommerce y marca
-            </span>
-          </Reveal>
-
           <AnimatedText
             as="h1"
-            text="Hacemos crecer tu tienda online y tu marca."
-            className="mt-6 text-5xl leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl"
+            text="Tu tienda, tu contenido y tu estrategia en tres manos."
+            className="text-5xl font-extrabold leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl"
           />
 
           <Reveal delay={500}>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-sand-100/80">
-              Manejamos y actualizamos tu ecommerce, creamos contenido y media, diseñamos tu estrategia digital y fotografiamos tus productos para que tu comercio venda más.
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-sand-100/80 sm:text-lg">
+              Administramos tu ecommerce, producimos tu contenido y fotografía, y definimos tu estrategia digital con una mirada puesta en el negocio completo.
             </p>
+            <a
+              href="#contacto"
+              className="group mt-8 inline-flex items-center gap-2 rounded-full bg-sand-200 px-7 py-4 text-sm font-semibold text-brand-900 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-xl hover:shadow-black/20 active:scale-[0.98]"
+            >
+              Contanos qué necesitás
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </a>
           </Reveal>
         </div>
 
